@@ -27,8 +27,8 @@ field.set(unknownObjectStore, null);
 
 const wrongType: string = field.get(unknownObjectStore);
 //    ^^^^^^^^^
-// Type 'string' is not assignable to type 'number | null'.
+// Type 'string' is not assignable to type 'number | undefined'.
 
 const correct = field.get(unknownObjectStore);
-//    ^? - const correct: number | null
+//    ^? - const correct: number | undefined
 ```
