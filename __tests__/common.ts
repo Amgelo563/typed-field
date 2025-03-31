@@ -43,6 +43,13 @@ export function runCommonTests(options: {
       expect(result2).toBe(undefined);
     });
 
+    test('GIVEN an empty store and a forced get, THEN it throws', () => {
+      const store = storeFactory();
+      const field = createTypedField<number>(keyDescription);
+
+      expect(() => field.get(store, true)).toThrow();
+    });
+
     test('GIVEN a field with a type THEN set() only accepts that type', () => {
       const field = createTypedField<string>(keyDescription);
       expectTypeOf(field.set).parameter(1).toExtend<string>();
@@ -51,6 +58,11 @@ export function runCommonTests(options: {
     test('GIVEN a store with a type THEN get() returns that type', () => {
       const field = createTypedField<string>(keyDescription);
       expectTypeOf(field.get).returns.toExtend<string | undefined>();
+    });
+
+    test('GIVEN a field with a type THEN a forced get returns that type and not undefined', () => {
+      const field = createTypedField<string>(keyDescription);
+      expectTypeOf(field.get<true>).returns.toExtend<string>();
     });
   });
 }
