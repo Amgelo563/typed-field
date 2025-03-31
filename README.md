@@ -1,7 +1,7 @@
 # 📦 `typed-field`
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/Amgelo563/typed-field/build.yml?style=for-the-badge&logo=github)
-![Test Status](https://img.shields.io/github/actions/workflow/status/Amgelo563/typed-field/test.yml?style=for-the-badge&logo=vitest&label=Tests)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Amgelo563/typed-field/build.yml?style=for-the-badge&logo=github)](https://github.com/Amgelo563/typed-field/actions/workflows/build.yml)
+[![Test Status](https://img.shields.io/github/actions/workflow/status/Amgelo563/typed-field/test.yml?style=for-the-badge&logo=vitest&label=Tests)](https://github.com/Amgelo563/typed-field/actions/workflows/test.yml)
 [![View on NPM](https://img.shields.io/badge/View%20on-NPM-c60000?style=for-the-badge&logo=npm&logoColor=ffffff)](https://www.npmjs.com/package/typed-field)
 [![Built with Typescript](https://img.shields.io/badge/Built%20with-Typescript-3176C6?style=for-the-badge&logo=typescript&logoColor=3178C6)](https://www.typescriptlang.org/)
 
