@@ -1,3 +1,13 @@
+## [1.2.0](https://github.com/Amgelo563/typed-field/compare/v1.1.0...v1.2.0) (2025-03-31)
+
+### Features
+
+* add force option to get ([3e58324](https://github.com/Amgelo563/typed-field/commit/3e58324687c7b2d6025328ba69e30a6a31b86e26))
+
+### Bug Fixes
+
+* check undefined result for forced get instead of falsy value ([54730f8](https://github.com/Amgelo563/typed-field/commit/54730f8683eaabd616c62e82caf63dcfc19c2d03))
+
 ## [1.1.0](https://github.com/Amgelo563/typed-field/compare/v1.0.0...v1.1.0) (2025-03-31)
 
 ### Features
