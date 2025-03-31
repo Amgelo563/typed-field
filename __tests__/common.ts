@@ -50,6 +50,15 @@ export function runCommonTests(options: {
       expect(() => field.get(store, true)).toThrow();
     });
 
+    test('GIVEN a non empty store and a forced get, THEN it does not throw', () => {
+      const store = storeFactory();
+      const field = createTypedField<number>(keyDescription);
+
+      field.set(store, 0);
+
+      expect(() => field.get(store, true)).not.toThrow();
+    });
+
     test('GIVEN a field with a type THEN set() only accepts that type', () => {
       const field = createTypedField<string>(keyDescription);
       expectTypeOf(field.set).parameter(1).toExtend<string>();

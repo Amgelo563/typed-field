@@ -17,7 +17,7 @@ export function createTypedField<T>(description: string) {
         result = backingMap[key];
       }
 
-      if (!result && force) {
+      if (typeof result === 'undefined' && force) {
         throw new Error(
           `Cannot get field "${description}", it has not been set.`,
         );
