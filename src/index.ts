@@ -1,7 +1,6 @@
 export type Storeable =
   | Record<symbol, unknown>
-  | Map<symbol, unknown>
-  | WeakMap<symbol, unknown>;
+  | { set(k: symbol, v: unknown): unknown; get(k: symbol): unknown };
 
 export function createTypedField<T>(description: string) {
   const key = Symbol(description);
@@ -9,7 +8,7 @@ export function createTypedField<T>(description: string) {
     get(backingMap: Storeable): T | undefined {
       let result = null;
 
-      if (backingMap instanceof Map || backingMap instanceof WeakMap) {
+      if ('get' in backingMap) {
         result = backingMap.get(key);
       } else {
         result = backingMap[key];
@@ -18,7 +17,7 @@ export function createTypedField<T>(description: string) {
       return result as T | undefined;
     },
     set(backingMap: Storeable, val: T): void {
-      if (backingMap instanceof Map || backingMap instanceof WeakMap) {
+      if ('set' in backingMap) {
         backingMap.set(key, val);
       } else {
         backingMap[key] = val;
