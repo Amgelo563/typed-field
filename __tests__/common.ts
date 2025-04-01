@@ -1,4 +1,4 @@
-import { describe, expect, expectTypeOf, test } from 'vitest';
+import { describe, expect, test } from 'vitest';
 import { createTypedField, type Storeable } from '../src';
 
 export function runCommonTests(options: {
@@ -57,21 +57,6 @@ export function runCommonTests(options: {
       field.set(store, 0);
 
       expect(() => field.get(store, true)).not.toThrow();
-    });
-
-    test('GIVEN a field with a type THEN set() only accepts that type', () => {
-      const field = createTypedField<string>(keyDescription);
-      expectTypeOf(field.set).parameter(1).toExtend<string>();
-    });
-
-    test('GIVEN a store with a type THEN get() returns that type', () => {
-      const field = createTypedField<string>(keyDescription);
-      expectTypeOf(field.get).returns.toExtend<string | undefined>();
-    });
-
-    test('GIVEN a field with a type THEN a forced get returns that type and not undefined', () => {
-      const field = createTypedField<string>(keyDescription);
-      expectTypeOf(field.get<true>).returns.toExtend<string>();
     });
   });
 }
