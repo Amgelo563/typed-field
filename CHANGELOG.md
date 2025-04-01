@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/Amgelo563/typed-field/compare/v1.2.0...v1.3.0) (2025-04-01)
+
+### Features
+
+* add TypedField type ([985768b](https://github.com/Amgelo563/typed-field/commit/985768b87a373c6db7f7a0c122b96c6d011fb625))
+
 ## [1.2.0](https://github.com/Amgelo563/typed-field/compare/v1.1.0...v1.2.0) (2025-03-31)
 
 ### Features
