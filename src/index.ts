@@ -2,6 +2,8 @@ export type Storeable =
   | Record<symbol, unknown>
   | { set(k: symbol, v: unknown): unknown; get(k: symbol): unknown };
 
+export type TypedField<T> = ReturnType<typeof createTypedField<T>>;
+
 export function createTypedField<T>(description: string) {
   const key = Symbol(description);
   return {
